@@ -1,0 +1,21 @@
+node:
+  host: "0.0.0.0"
+  port: 7071
+
+database:
+  path: ":memory:"
+
+logging:
+  level: info
+
+contracts:
+  phoneLinkCollectionAddress : ${PHONE_LINK_COLLECTION_ADDRESS}
+
+validator:
+  validatorKey: 0xd56ca4bc48b3114d7738236c748e2b75c32c9b1e8b2beb118b83e527ea6ef619
+  authenticationMode: 3
+
+sms:
+  endpoint: ${SMS_ENDPOINT}
+  accessKey: ${SMS_ACCESSKEY}
+  sender: ${SMS_SENDER}
