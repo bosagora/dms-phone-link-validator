@@ -1,0 +1,23 @@
+node:
+  host: ${NODE_HOST}
+  port: ${NODE_PORT}
+  external: ${NODE_EXTERNAL_IP}
+  delayLoading: ${NODE_DELAY_LOADING}
+
+database:
+  path: ${DB_PATH}
+
+logging:
+  level: ${LOGGING_LEVEL}
+
+contracts:
+  phoneLinkCollectionAddress : ${PHONE_LINK_COLLECTION_ADDRESS}
+
+validator:
+  validatorKey: ${VALIDATOR_KEY}
+  authenticationMode: ${AUTHENTICATION_MODE}
+
+sms:
+  endpoint: ${SMS_ENDPOINT}
+  accessKey: ${SMS_ACCESSKEY}
+  sender: ${SMS_SENDER}

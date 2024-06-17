@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  dms-osx-faker:
+    image: bosagora/del-validator:latest
+    container_name: del-validator
+    restart: always
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      PRODUCTION_NET_URL: http://host.docker.internal:8545
+      PRODUCTION_CHAIN_ID: 24680
+      SERVER_ADDRESS: 0.0.0.0
+      SERVER_PORT: 7070
+      SERVER_EXTERNAL_IP:
+      LOGGING_LEVEL: verbose
+      LINK_COLLECTION_ADDRESS: 0xf1CEFe1b28ee6768597f177eca6616aD44C96418
+      VALIDATOR_KEY: 0xd56ca4bc48b3114d7738236c748e2b75c32c9b1e8b2beb118b83e527ea6ef619
+      AUTHENTICATION_MODE: 3
