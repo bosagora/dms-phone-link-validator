@@ -1547,6 +1547,28 @@ abstract-leveldown@~6.2.1:
     level-supports "~1.0.0"
     xtend "~4.0.0"
 
+acc-bridge-contracts-v2@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/acc-bridge-contracts-v2/-/acc-bridge-contracts-v2-2.0.0.tgz#24055129aee133a0434a83421bf553aa9803aaa2"
+  integrity sha512-5E0InMefG+slYgXl+uMlqJH53NARIKobM9j4S7R66ldziM5CQEc8v/sBzrMeojQH/lcHyYbBtJdXcntx6+v3FA==
+  dependencies:
+    "@openzeppelin/contracts" "^4.9.5"
+    "@openzeppelin/contracts-upgradeable" "^4.9.5"
+    "@openzeppelin/hardhat-upgrades" "^1.28.0"
+    loyalty-tokens "~2.0.0"
+
+acc-contracts-v2@~2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/acc-contracts-v2/-/acc-contracts-v2-2.1.3.tgz#94016693176011df795f6e71dd8a7ee4d94164f3"
+  integrity sha512-pznXdp/wc9FSbGrlizcOfuEiK2KweMBpkBXamGqrHGVrhcMSxYCbwxtzg3X98sMLGGBRU76tx3GYj24zD6iB6A==
+  dependencies:
+    "@openzeppelin/contracts" "^4.9.5"
+    "@openzeppelin/contracts-upgradeable" "^4.9.5"
+    "@openzeppelin/hardhat-upgrades" "^1.28.0"
+    acc-bridge-contracts-v2 "~2.0.0"
+    loyalty-tokens "~2.0.0"
+    multisig-wallet-contracts "~2.0.0"
+
 accepts@~1.3.8:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
@@ -2883,28 +2905,6 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
-
-dms-bridge-contracts-v2@~2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/dms-bridge-contracts-v2/-/dms-bridge-contracts-v2-2.0.0.tgz#d43720c5679bb48a4db0dc9a0167b990a10c7198"
-  integrity sha512-rapcN25LVOl4BF1hdnPr9VmW95+QewIO+ID852Sy3eeCOSvZlHcB2k2P1a8hLxnI6+NixCczvzE/gUFQUxx3Zg==
-  dependencies:
-    "@openzeppelin/contracts" "^4.9.5"
-    "@openzeppelin/contracts-upgradeable" "^4.9.5"
-    "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    loyalty-tokens "~2.0.0"
-
-dms-contracts-v2@~2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/dms-contracts-v2/-/dms-contracts-v2-2.1.3.tgz#928856681500abf7d1cb96ae3570b95084d29839"
-  integrity sha512-hVg6hZAEYS58oG6YeP7au731djUp3oI0esIk5WFRkXqYsTa33IEFQpCTvBWj1eRIVgDPLpTRbDdbUfSzdJQWog==
-  dependencies:
-    "@openzeppelin/contracts" "^4.9.5"
-    "@openzeppelin/contracts-upgradeable" "^4.9.5"
-    "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    dms-bridge-contracts-v2 "~2.0.0"
-    loyalty-tokens "~2.0.0"
-    multisig-wallet-contracts "~2.0.0"
 
 dom-walk@^0.1.0:
   version "0.1.2"
