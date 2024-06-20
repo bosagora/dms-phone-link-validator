@@ -14,7 +14,7 @@ contracts:
   phoneLinkCollectionAddress : ${PHONE_LINK_COLLECTION_ADDRESS}
 
 validator:
-  validatorKey: ${VALIDATOR_KEY}
+  validatorKey: ${LINK_VALIDATOR1}
   authenticationMode: ${AUTHENTICATION_MODE}
 
 sms:
