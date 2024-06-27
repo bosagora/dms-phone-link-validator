@@ -3,7 +3,7 @@ import winston from "winston";
 const { combine, timestamp, printf, colorize } = winston.format;
 // tslint:disable-next-line:no-shadowed-variable
 const customFormat = printf(({ level, timestamp, validatorIndex, method, message }) => {
-    return `${timestamp} ${validatorIndex} ${level} ${message} ${method}`;
+    return `${level.toUpperCase()} [${timestamp}] ${validatorIndex.toString().padStart(3, "0")} ${message} ${method}`;
 });
 
 export class Logger {
