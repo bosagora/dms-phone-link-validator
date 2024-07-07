@@ -1487,26 +1487,26 @@ abstract-leveldown@~6.2.1:
     level-supports "~1.0.0"
     xtend "~4.0.0"
 
-acc-bridge-contracts-v2@~2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/acc-bridge-contracts-v2/-/acc-bridge-contracts-v2-2.0.0.tgz#24055129aee133a0434a83421bf553aa9803aaa2"
-  integrity sha512-5E0InMefG+slYgXl+uMlqJH53NARIKobM9j4S7R66ldziM5CQEc8v/sBzrMeojQH/lcHyYbBtJdXcntx6+v3FA==
+acc-bridge-contracts-v2@~2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/acc-bridge-contracts-v2/-/acc-bridge-contracts-v2-2.3.1.tgz#0e6e5bd4297b024f3ed82b8e7dbcea34cd4f81dd"
+  integrity sha512-3wYqCOuW/LJZLjjNblA8iyig3+9pK4G3IHH++/Zm5wDjHv1crvtLOM1x+QepKrsXMA4MWONZz/DrwIol+80e0Q==
   dependencies:
     "@openzeppelin/contracts" "^4.9.5"
     "@openzeppelin/contracts-upgradeable" "^4.9.5"
     "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    loyalty-tokens "~2.0.0"
+    loyalty-tokens "~2.1.1"
 
-acc-contracts-v2@~2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/acc-contracts-v2/-/acc-contracts-v2-2.1.3.tgz#94016693176011df795f6e71dd8a7ee4d94164f3"
-  integrity sha512-pznXdp/wc9FSbGrlizcOfuEiK2KweMBpkBXamGqrHGVrhcMSxYCbwxtzg3X98sMLGGBRU76tx3GYj24zD6iB6A==
+acc-contracts-v2@~2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/acc-contracts-v2/-/acc-contracts-v2-2.3.1.tgz#d5b12adc8b80fa9f4250c48c010c03d3178be5a4"
+  integrity sha512-psSyrfSV6yaJSU/rx2ICe71PehlJ58xwGPvVHuMOXFb9C5/02GLcr58C2aYZjdJ9cxlkoxYAGjCwGXw+nWtbFg==
   dependencies:
     "@openzeppelin/contracts" "^4.9.5"
     "@openzeppelin/contracts-upgradeable" "^4.9.5"
     "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    acc-bridge-contracts-v2 "~2.0.0"
-    loyalty-tokens "~2.0.0"
+    acc-bridge-contracts-v2 "~2.3.1"
+    loyalty-tokens "~2.1.1"
     multisig-wallet-contracts "~2.0.0"
 
 accepts@~1.3.8:
@@ -4674,10 +4674,10 @@ loupe@^2.3.6:
   dependencies:
     get-func-name "^2.0.1"
 
-loyalty-tokens@~2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/loyalty-tokens/-/loyalty-tokens-2.0.0.tgz#5e9e24674598fd8cdf43f14462ff8ca898da19f2"
-  integrity sha512-XDKfITphWr+DYSO0RGl/Kec8WA7UQ7odskcmllK0Kr2eomX+jkmKa19tNEKVsD0IBHx3TsaIMqLp57MPRMG7fg==
+loyalty-tokens@~2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/loyalty-tokens/-/loyalty-tokens-2.1.1.tgz#d075824da6147de45f2fc3dd540f5d4ca0178b5b"
+  integrity sha512-jcrAiuO6tTPBWuvUGToiAlJWXe+l0Jmp7CC/5ZtmbXu7dJJ2cKG+PaClve5C+BRAaqKelJSrUhx+l6TJN8HZIg==
   dependencies:
     "@openzeppelin/contracts" "^4.9.5"
     multisig-wallet-contracts "^2.0.0"
