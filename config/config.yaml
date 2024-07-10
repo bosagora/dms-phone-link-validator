@@ -20,4 +20,3 @@ validator:
 sms:
   endpoint: ${SMS_ENDPOINT}
   accessKey: ${SMS_ACCESSKEY}
-  sender: ${SMS_SENDER}

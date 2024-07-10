@@ -10,12 +10,10 @@ async function main() {
     contents.push(`인증번호 [${25}]. `);
     contents.push(`5분가 유효합니다.`);
     console.log(process.env.SMS_ACCESSKEY || "");
-    console.log(process.env.SMS_SENDER || "");
     console.log(process.env.SMS_RECEIVER || "");
 
     const data = {
         accessKey: process.env.SMS_ACCESSKEY || "",
-        sender: process.env.SMS_SENDER || "",
         receiver: process.env.SMS_RECEIVER || "",
         msg: contents.map((m) => m + "\n").join("\n"),
     };

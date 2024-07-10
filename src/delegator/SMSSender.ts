@@ -39,23 +39,13 @@ export class SMSSender implements ISMSSender {
             return false;
         }
 
-        if (this._config.sms.sender === "") {
-            logger.error({
-                validatorIndex,
-                method: "SMSSender.send()",
-                message: `The sender for SMS is not set up.`,
-            });
-            return false;
-        }
-
         try {
             const client = axios.create({ headers: { Authorization: this._config.sms.accessKey } });
             const contents: string[] = [];
             const validatorNumber: string = `${validatorIndex + 1}`;
             contents.push(`#${validatorNumber}`);
-            contents.push(`인증코드: ${code}`);
+            contents.push(`Code: ${code}`);
             const response = await client.post(this._config.sms.endpoint, {
-                sender: this._config.sms.sender,
                 receiver: phone,
                 msg: contents.join("\n"),
             });
