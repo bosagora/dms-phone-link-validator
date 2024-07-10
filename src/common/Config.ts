@@ -194,27 +194,23 @@ export class LoggingConfig implements ILoggingConfig {
 export class SMSConfig implements ISMSConfig {
     public endpoint: string;
     public accessKey: string;
-    public sender: string;
 
     constructor() {
         const defaults = SMSConfig.defaultValue();
         this.endpoint = defaults.endpoint;
         this.accessKey = defaults.accessKey;
-        this.sender = defaults.sender;
     }
 
     public static defaultValue(): ISMSConfig {
         return {
             endpoint: process.env.SMS_ENDPOINT || "",
             accessKey: process.env.SMS_ACCESSKEY || "",
-            sender: process.env.SMS_SENDER || "",
         };
     }
 
     public readFromObject(config: ISMSConfig) {
         if (config.endpoint !== undefined) this.endpoint = config.endpoint;
         if (config.accessKey !== undefined) this.accessKey = config.accessKey;
-        if (config.sender !== undefined) this.sender = config.sender;
     }
 }
 export interface INodeConfig {
@@ -245,7 +241,6 @@ export interface IContractsConfig {
 export interface ISMSConfig {
     endpoint: string;
     accessKey: string;
-    sender: string;
 }
 
 export interface IConfig {
