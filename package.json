@@ -1,5 +1,5 @@
 {
-    "name": "phone-link-validator",
+    "name": "dms-phone-link-validator",
     "version": "1.0.0",
     "description": "Validator for the link between phone number and wallet address",
     "main": "src/main.js",
@@ -26,7 +26,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/bosagora/phone-link-validator.git"
+        "url": "git+https://github.com/bosagora/dms-phone-link-validator.git"
     },
     "author": "BOSagora Foundation",
     "license": "AGPL-3.0-or-later",
