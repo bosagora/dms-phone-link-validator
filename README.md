@@ -1,4 +1,5 @@
 # phone-link-validator
+
 Validator for the link between phone number and wallet address
 
 ## Preparing
