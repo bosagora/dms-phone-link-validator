@@ -615,7 +615,8 @@ export class Router {
                 this._validatorIndex,
                 this._validators.size,
                 sendCode,
-                validation.requestPhone
+                validation.requestPhone,
+                validation.requestId
             );
             validation.sendCode = sendCode;
             validation.validationStatus = PhoneValidationStatus.SENT;
