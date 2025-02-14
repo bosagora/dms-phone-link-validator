@@ -1487,28 +1487,6 @@ abstract-leveldown@~6.2.1:
     level-supports "~1.0.0"
     xtend "~4.0.0"
 
-acc-bridge-contracts-v2@~2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/acc-bridge-contracts-v2/-/acc-bridge-contracts-v2-2.3.1.tgz#0e6e5bd4297b024f3ed82b8e7dbcea34cd4f81dd"
-  integrity sha512-3wYqCOuW/LJZLjjNblA8iyig3+9pK4G3IHH++/Zm5wDjHv1crvtLOM1x+QepKrsXMA4MWONZz/DrwIol+80e0Q==
-  dependencies:
-    "@openzeppelin/contracts" "^4.9.5"
-    "@openzeppelin/contracts-upgradeable" "^4.9.5"
-    "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    loyalty-tokens "~2.1.1"
-
-acc-contracts-v2@~2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/acc-contracts-v2/-/acc-contracts-v2-2.3.1.tgz#d5b12adc8b80fa9f4250c48c010c03d3178be5a4"
-  integrity sha512-psSyrfSV6yaJSU/rx2ICe71PehlJ58xwGPvVHuMOXFb9C5/02GLcr58C2aYZjdJ9cxlkoxYAGjCwGXw+nWtbFg==
-  dependencies:
-    "@openzeppelin/contracts" "^4.9.5"
-    "@openzeppelin/contracts-upgradeable" "^4.9.5"
-    "@openzeppelin/hardhat-upgrades" "^1.28.0"
-    acc-bridge-contracts-v2 "~2.3.1"
-    loyalty-tokens "~2.1.1"
-    multisig-wallet-contracts "~2.0.0"
-
 accepts@~1.3.8:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
@@ -4449,6 +4427,28 @@ kind-of@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
+
+kios-bridge-contracts-v2@~2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/kios-bridge-contracts-v2/-/kios-bridge-contracts-v2-2.5.0.tgz#2bd610f79ba9b79e903466ece3104decb5e58b1b"
+  integrity sha512-GdKFGt83Db3avHxjZFL24ef7JsZnJcBBjaIwIhLAJTH3B4yGK3W2/lEDSpH2fVurPRhHk5fAHuqXcofIqnbNIg==
+  dependencies:
+    "@openzeppelin/contracts" "^4.9.5"
+    "@openzeppelin/contracts-upgradeable" "^4.9.5"
+    "@openzeppelin/hardhat-upgrades" "^1.28.0"
+    loyalty-tokens "~2.1.1"
+
+kios-contracts-v2@~2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/kios-contracts-v2/-/kios-contracts-v2-2.12.0.tgz#182f722b356d00ae044822f7d3e6bcdb47d53d0f"
+  integrity sha512-bvne4DQrRI9jrPIKVnZyKW4rLGxI761938i1yhUSFSK5Iv8hysXsZjco2WB5EALOeet7Hy7r+wq+YFzRmqwOXQ==
+  dependencies:
+    "@openzeppelin/contracts" "^4.9.5"
+    "@openzeppelin/contracts-upgradeable" "^4.9.5"
+    "@openzeppelin/hardhat-upgrades" "^1.28.0"
+    kios-bridge-contracts-v2 "~2.5.0"
+    loyalty-tokens "~2.1.1"
+    multisig-wallet-contracts "~2.0.0"
 
 kuler@^2.0.0:
   version "2.0.0"

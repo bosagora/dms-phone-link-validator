@@ -1,5 +1,5 @@
 {
-    "name": "phone-link-validator",
+    "name": "kios-phone-link-validator",
     "version": "1.0.0",
     "description": "Validator for the link between phone number and wallet address",
     "main": "src/main.js",
@@ -26,7 +26,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/acc-coin/phone-link-validator.git"
+        "url": "git+https://github.com/kios-coin/kios-phone-link-validator.git"
     },
     "author": "BOSagora Foundation",
     "license": "AGPL-3.0-or-later",
@@ -68,7 +68,7 @@
         "@openzeppelin/hardhat-upgrades": "^1.28.0",
         "@typechain/ethers-v5": "^10.1.0",
         "@typechain/hardhat": "^6.1.2",
-        "acc-contracts-v2": "~2.3.1",
+        "kios-contracts-v2": "~2.12.0",
         "argparse": "^2.0.1",
         "assert": "^2.0.0",
         "axios": "^1.6.8",

@@ -51,7 +51,12 @@ async function getContract(): Promise<PhoneLinkCollection> {
 async function request(user: IUserData): Promise<string> {
     const contract = await getContract();
     const nonce = await contract.nonceOf(user.address);
-    const message = ContractUtils.getRequestPhoneMessage(user.phone, user.address, hre.ethers.provider.network.chainId, nonce);
+    const message = ContractUtils.getRequestPhoneMessage(
+        user.phone,
+        user.address,
+        hre.ethers.provider.network.chainId,
+        nonce
+    );
     const signature = await ContractUtils.signMessage(new hre.ethers.Wallet(user.privateKey), message);
 
     const url = URI(validatorNodeURL).filename("request").toString();

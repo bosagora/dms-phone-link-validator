@@ -7,7 +7,13 @@ import { logger } from "../common/Logger";
  * SMS 를 발송하는 델리게이트의 인터패이스입니다.
  */
 export interface ISMSSender {
-    send(validatorIndex: number, totalValidatorCount: number, code: string, receiver: string, requestId: string): Promise<boolean>;
+    send(
+        validatorIndex: number,
+        totalValidatorCount: number,
+        code: string,
+        receiver: string,
+        requestId: string
+    ): Promise<boolean>;
 }
 
 /**
@@ -20,7 +26,13 @@ export class SMSSender implements ISMSSender {
         this._config = config;
     }
 
-    public async send(validatorIndex: number, totalValidator: number, code: string, receiver: string, requestId: string): Promise<boolean> {
+    public async send(
+        validatorIndex: number,
+        totalValidator: number,
+        code: string,
+        receiver: string,
+        requestId: string
+    ): Promise<boolean> {
         if (this._config.sms.endpoint === "") {
             logger.error({
                 validatorIndex,
@@ -43,7 +55,7 @@ export class SMSSender implements ISMSSender {
             const client = axios.create({ headers: { Authorization: this._config.sms.accessKey } });
             const response = await client.post(this._config.sms.endpoint, {
                 requestId,
-                validatorIndex: validatorIndex+1,
+                validatorIndex: validatorIndex + 1,
                 receiver,
                 code,
             });
