@@ -66,9 +66,10 @@ describe("Test of ValidatorNode - NoSMSKnownCode", function () {
                 config.contracts.phoneLinkCollectionAddress = linkCollectionContract.address;
                 config.validator.validatorKey = validators[idx].privateKey;
                 config.validator.authenticationMode = AuthenticationMode.NoSMSKnownCode;
-                config.node.protocol = "http";
                 config.node.host = "0.0.0.0";
-                config.node.port = basePort + idx;
+                config.node.http.enable = true;
+                config.node.http.port = basePort + idx;
+                config.node.https.enable = false;
                 configs.push(config);
 
                 await linkCollectionContract
@@ -85,7 +86,7 @@ describe("Test of ValidatorNode - NoSMSKnownCode", function () {
 
         before("Create Validator Nodes", async () => {
             for (let idx = 0; idx < maxValidatorCount; idx++) {
-                validatorNodeURLs.push(`http://${ip.address()}:${configs[idx].node.port}`);
+                validatorNodeURLs.push(`http://${ip.address()}:${configs[idx].node.http.port}`);
                 validatorNodes.push(new TestValidatorNode(configs[idx], storages[idx]));
             }
         });
@@ -109,7 +110,7 @@ describe("Test of ValidatorNode - NoSMSKnownCode", function () {
                 assert.deepStrictEqual(response.data.code, 200);
                 const nodeInfo: ValidatorNodeInfo = response.data.data;
                 assert.strictEqual(nodeInfo.nodeId, validators[idx].address.toLowerCase());
-                assert.strictEqual(nodeInfo.endpoint, `http://${ip.address()}:${configs[idx].node.port}`);
+                assert.strictEqual(nodeInfo.endpoint, `http://${ip.address()}:${configs[idx].node.http.port}`);
             }
         });
 

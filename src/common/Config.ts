@@ -70,28 +70,36 @@ export class Config implements IConfig {
 }
 
 export class NodeConfig implements INodeConfig {
-    public protocol: string;
     public host: string;
-    public port: number;
+    public http: HTTPConfig;
+    public https: HTTPSConfig;
     public external: string;
     public delayLoading: number;
 
-    constructor(host?: string, port?: number) {
+    constructor(host?: string, http?: HTTPConfig, https?: HTTPSConfig) {
         const conf = extend(true, {}, NodeConfig.defaultValue());
-        extend(true, conf, { host, port });
+        extend(true, conf, { host, http, https });
 
-        this.protocol = conf.protocol;
         this.host = conf.host;
-        this.port = Number(conf.port);
+        this.http = conf.http;
+        this.https = conf.https;
         this.external = conf.external;
         this.delayLoading = Number(conf.delayLoading);
     }
 
     public static defaultValue(): INodeConfig {
         return {
-            protocol: "http",
             host: "127.0.0.1",
-            port: 3000,
+            http: {
+                enable: true,
+                port: 3000,
+            },
+            https: {
+                enable: false,
+                port: 3443,
+                cert: "",
+                key: "",
+            },
             external: "",
             delayLoading: 0,
         };
@@ -101,9 +109,13 @@ export class NodeConfig implements INodeConfig {
         const conf = extend(true, {}, NodeConfig.defaultValue());
         extend(true, conf, config);
 
-        this.protocol = conf.protocol;
         this.host = conf.host;
-        this.port = Number(conf.port);
+        this.http.enable = conf.http.enable.toString().toLowerCase() === "true";
+        this.http.port = Number(conf.http.port);
+        this.https.enable = conf.https.enable.toString().toLowerCase() === "true";
+        this.https.port = Number(conf.https.port);
+        this.https.cert = conf.https.cert;
+        this.https.key = conf.https.key;
         this.external = conf.external;
         this.delayLoading = Number(conf.delayLoading);
     }
@@ -213,10 +225,22 @@ export class SMSConfig implements ISMSConfig {
         if (config.accessKey !== undefined) this.accessKey = config.accessKey;
     }
 }
-export interface INodeConfig {
-    protocol: string;
-    host: string;
+export interface HTTPConfig {
+    enable: boolean;
     port: number;
+}
+
+export interface HTTPSConfig {
+    enable: boolean;
+    port: number;
+    cert: string;
+    key: string;
+}
+
+export interface INodeConfig {
+    host: string;
+    http: HTTPConfig;
+    https: HTTPSConfig;
     external: string;
     delayLoading: number;
 }

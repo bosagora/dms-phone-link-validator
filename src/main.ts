@@ -22,11 +22,22 @@ async function main() {
         method: "main",
         message: `host: ${config.node.host}`,
     });
-    logger.info({
-        validatorIndex: "none",
-        method: "main",
-        message: `port: ${config.node.port}`,
-    });
+    if (config.node.http.enable) {
+        logger.info({
+            validatorIndex: "none",
+            method: "main",
+            message: `HTTP server: enabled on port ${config.node.http.port}${
+                config.node.https.enable ? " (internal use)" : ""
+            }`,
+        });
+    }
+    if (config.node.https.enable) {
+        logger.info({
+            validatorIndex: "none",
+            method: "main",
+            message: `HTTPS server: enabled on port ${config.node.https.port}`,
+        });
+    }
 
     if (config.node.delayLoading > 0) await Utils.delay(config.node.delayLoading);
 
@@ -40,14 +51,14 @@ async function main() {
                         logger.error({
                             validatorIndex: "none",
                             method: "main",
-                            message: `${config.node.port} requires elevated privileges`,
+                            message: `Port requires elevated privileges`,
                         });
                         break;
                     case "EADDRINUSE":
                         logger.error({
                             validatorIndex: "none",
                             method: "main",
-                            message: `Port ${config.node.port} is already in use`,
+                            message: `Port is already in use`,
                         });
                         break;
                     default:

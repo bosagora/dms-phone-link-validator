@@ -80,7 +80,9 @@ export class Router {
         const host = this._config.node.external !== "" ? this._config.node.external : ip.address();
         this.nodeInfo = {
             nodeId: this._wallet.address.toLowerCase(),
-            endpoint: `${this._config.node.protocol}://${host}:${this._config.node.port}`,
+            endpoint: this._config.node.https.enable
+                ? `https://${host}:${this._config.node.https.port}`
+                : `http://${host}:${this._config.node.http.port}`,
             version: "v1.0.0",
         };
         this._startTimeStamp = ContractUtils.getTimeStamp();

@@ -65,9 +65,10 @@ describe("Test of ValidatorNode - NoPhoneNoCode", function () {
                 config.contracts.phoneLinkCollectionAddress = linkCollectionContract.address;
                 config.validator.validatorKey = validators[idx].privateKey;
                 config.validator.authenticationMode = AuthenticationMode.NoSMSNoCode;
-                config.node.protocol = "http";
                 config.node.host = "0.0.0.0";
-                config.node.port = basePort + idx;
+                config.node.http.enable = true;
+                config.node.http.port = basePort + idx;
+                config.node.https.enable = false;
                 configs.push(config);
 
                 await linkCollectionContract
@@ -84,7 +85,7 @@ describe("Test of ValidatorNode - NoPhoneNoCode", function () {
 
         before("Create Validator Nodes", async () => {
             for (let idx = 0; idx < maxValidatorCount; idx++) {
-                validatorNodeURLs.push(`http://${ip.address()}:${configs[idx].node.port}`);
+                validatorNodeURLs.push(`http://${ip.address()}:${configs[idx].node.http.port}`);
                 validatorNodes.push(new TestValidatorNode(configs[idx], storages[idx]));
             }
         });
