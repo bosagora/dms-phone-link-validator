@@ -9,6 +9,7 @@ node:
     cert: ${SSL_CERT_PATH}
     key: ${SSL_KEY_PATH}
   external: ${NODE_EXTERNAL_IP}
+  externalEndpoint: ${NODE_EXTERNAL_ENDPOINT}
   delayLoading: ${NODE_DELAY_LOADING}
 
 database:

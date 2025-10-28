@@ -1,4 +1,3 @@
-version: "3.3"
 services:
   dms-osx-faker:
     image: bosagora/del-validator:latest

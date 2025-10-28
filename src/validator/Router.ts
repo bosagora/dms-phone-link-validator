@@ -77,12 +77,16 @@ export class Router {
         this._wallet = new Wallet(this._config.validator.validatorKey, hre.ethers.provider);
         this._validatorIndex = -1;
 
-        const host = this._config.node.external !== "" ? this._config.node.external : ip.address();
+        const getHost = () => (this._config.node.external !== "" ? this._config.node.external : ip.address());
+        const endpoint =
+            this._config.node.externalEndpoint !== ""
+                ? this._config.node.externalEndpoint
+                : this._config.node.https.enable
+                ? `https://${getHost()}:${this._config.node.https.port}`
+                : `http://${getHost()}:${this._config.node.http.port}`;
         this.nodeInfo = {
             nodeId: this._wallet.address.toLowerCase(),
-            endpoint: this._config.node.https.enable
-                ? `https://${host}:${this._config.node.https.port}`
-                : `http://${host}:${this._config.node.http.port}`,
+            endpoint,
             version: "v1.0.0",
         };
         this._startTimeStamp = ContractUtils.getTimeStamp();

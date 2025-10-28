@@ -74,6 +74,7 @@ export class NodeConfig implements INodeConfig {
     public http: HTTPConfig;
     public https: HTTPSConfig;
     public external: string;
+    public externalEndpoint: string;
     public delayLoading: number;
 
     constructor(host?: string, http?: HTTPConfig, https?: HTTPSConfig) {
@@ -84,6 +85,7 @@ export class NodeConfig implements INodeConfig {
         this.http = conf.http;
         this.https = conf.https;
         this.external = conf.external;
+        this.externalEndpoint = conf.externalEndpoint;
         this.delayLoading = Number(conf.delayLoading);
     }
 
@@ -101,6 +103,7 @@ export class NodeConfig implements INodeConfig {
                 key: "",
             },
             external: "",
+            externalEndpoint: "",
             delayLoading: 0,
         };
     }
@@ -117,6 +120,7 @@ export class NodeConfig implements INodeConfig {
         this.https.cert = conf.https.cert;
         this.https.key = conf.https.key;
         this.external = conf.external;
+        this.externalEndpoint = conf.externalEndpoint;
         this.delayLoading = Number(conf.delayLoading);
     }
 }
@@ -242,6 +246,7 @@ export interface INodeConfig {
     http: HTTPConfig;
     https: HTTPSConfig;
     external: string;
+    externalEndpoint: string;
     delayLoading: number;
 }
 
